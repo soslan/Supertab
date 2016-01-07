@@ -7,6 +7,20 @@
 		},
 		"permissions": [
 			"topSites",
-			"chrome://favicon/"
-		]
+			"chrome://favicon/",
+			"history",
+			"tabs",
+			"bookmarks",
+			"storage"
+		],
+		"page_action": {
+			"default_icon": {
+				"19": "push_19x19.png",
+				"38": "push_38x38.png"
+			},
+			"default_title": "Push to SuperStack"
+		},
+		"background": {
+			"scripts": ["background.js"]
+		}
 }

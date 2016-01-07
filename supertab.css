@@ -1,0 +1,42 @@
+#main{
+	display:flex;
+	justify-content: space-around;
+}
+
+.section{
+	flex:1;
+	padding: 0 10px;
+}
+
+.item{
+	padding:5px;
+	cursor: pointer;
+	height:16px;
+	line-height:16px;
+	white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: block;
+    color:#333;
+	text-decoration: none;
+}
+
+.item > *{
+	vertical-align: middle;
+
+}
+
+.item a{
+
+}
+
+.item:hover{
+	background: #eee;
+	color:#333;
+
+}
+
+.supertab-icon{
+	margin-right: 5px;
+
+}

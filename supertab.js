@@ -2,27 +2,9 @@ chrome.topSites.get(function(data){
   var top = document.getElementById("top");
   for (var i in data){
     var s = data[i];
-    var item = document.createElement("li");
-
-    var icon = e({
-      tag:'img',
-      class:"spertab-icon",
-      parent:item,
-    });
-    icon.src = "chrome://favicon/"+s.url;
-
-    var link = e({
-      tag:"a",
-      attributes:{
-        href:s.url,
-      },
-      parent:item,
-    });
-
-    var label = e({
-      tag:'span',
-      parent:link,
-      content:s.title,
+    var item = l({
+      url:s.url,
+      title:s.title
     });
 
 
@@ -30,6 +12,74 @@ chrome.topSites.get(function(data){
     //item.innerHTML = s.url;
   }
 });
+
+chrome.history.search({
+  text:'',
+  maxResults:20,
+}, function(items){
+  var historyE = document.getElementById("history");
+  for (var i in items){
+    var item=items[i];
+    if(item.title==""){
+      continue;
+    }
+    var elem = l({
+      url:item.url,
+      title:item.title,
+    });
+    historyE.appendChild(elem);
+  }
+});
+
+chrome.storage.local.get("stack", function(data){
+  var stack = data.stack;
+  var stackE = document.getElementById("stack");
+  for (var i in stack){
+    var item=stack[i];
+    var elem = l({
+      url:item.url,
+      title:item.title,
+    });
+    stackE.appendChild(elem);
+  }
+});
+
+function b(args){
+  var button = e({
+    tag:"button",
+    action: function(){
+      alert("BBB");
+    }
+  });
+  return button;
+}
+
+
+function l( args ) {
+  var item = e({
+    tag:"a",
+    attributes:{
+      href:args.url,
+    },
+    class:"item"
+  });
+
+  var icon = e({
+    tag:'img',
+    class:"supertab-icon",
+    parent:item,
+  });
+  icon.src = "chrome://favicon/"+args.url;
+
+  var label = e({
+    tag:'span',
+    parent:item,
+    content:args.title,
+  });
+
+  return item;
+}
+
 
 function e( args ) {
   args = args || {};
