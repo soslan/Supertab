@@ -1,22 +1,24 @@
 // chrome.tabs.onCreated.addListener(function(tab){
 //   console.log(tab);
-//   chrome.pageAction.show(tab.id);
+//   chrome.browserAction.show(tab.id);
 // });
 
 chrome.tabs.query({}, function(results){
   for(var i in results){
     var tab = results[i];
     refreshIcon(tab);
-    //chrome.pageAction.show(tab.id);
+    //chrome.browserAction.show(tab.id);
   }
 });
 
 chrome.tabs.onUpdated.addListener(function(tabId, changes, tab){
   //console.log(tab);
-  //console.log(changes);
-  if(changes.url){
+  console.log(changes);
+  if(changes.status == "loading"){
+    //chrome.browserAction.show(tab.id);
+    console.log(tab);
     refreshIcon(tab);
-    chrome.pageAction.show(tabId);
+    
   }
 });
 
@@ -43,7 +45,7 @@ chrome.storage.local.get("stack", function(data){
   }
 });
 
-chrome.pageAction.onClicked.addListener(function(tab){
+chrome.browserAction.onClicked.addListener(function(tab){
   chrome.storage.local.get("stack", function(data){
     console.log("GOT STACK", data);
     if(data["stack"][tab.url] === undefined){
@@ -67,10 +69,11 @@ chrome.pageAction.onClicked.addListener(function(tab){
 });
 
 function refreshIcon(tab){
-  chrome.pageAction.show(tab.id);
+  //chrome.browserAction.show(tab.id);
   getStackItem(tab.url, function(item){
+    console.log("REFRESHING icon", item);
     if (item === undefined){
-      chrome.pageAction.setIcon({
+      chrome.browserAction.setIcon({
         "tabId":tab.id,
         "path": {
           "19": "push_19x19.png",
@@ -79,7 +82,7 @@ function refreshIcon(tab){
       });
     }
     else{
-      chrome.pageAction.setIcon({
+      chrome.browserAction.setIcon({
         "tabId":tab.id,
         "path": {
           "19": "remove_19x19.png",
@@ -107,5 +110,5 @@ function clearStack(){
 
 // chrome.tabs.onActivated.addListener(function(tab){
 //   console.log(tab);
-//   chrome.pageAction.show(tab.tabId);
+//   chrome.browserAction.show(tab.tabId);
 // });
