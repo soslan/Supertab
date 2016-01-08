@@ -70,6 +70,20 @@ chrome.storage.local.get("stack", function(data){
   }
 });
 
+var sections = document.querySelectorAll("#main > .section");
+var sectionControl = document.getElementById("section-control");
+for (var i=0; i< sections.length; i++){
+  console.log(sections[i]);
+  var section = sections[i];
+  var title = section.querySelector(".title").innerHTML;
+  var elem = e({
+    tag: "div",
+    class: "section-control-button",
+    content: title,
+  });
+  sectionControl.appendChild(elem);
+}
+
 function b(args){
   var button = e({
     tag:"button",
