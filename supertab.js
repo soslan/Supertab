@@ -40,6 +40,32 @@ chrome.storage.local.get("stack", function(data){
       url:item.url,
       title:item.title,
     });
+    elem.item = item;
+    //var deleteButton = b();
+    var deleteButton = e({
+      tag:"button",
+      class: "hidden button",
+      action: function(e){
+        var url = e.currentTarget.item.url;
+        var element = e.currentTarget.item.elem;
+        document.getElementById("stack").removeChild(element);
+        chrome.storage.local.get("stack", function(data){
+          delete data["stack"][url];
+          chrome.storage.local.set(data);
+        });
+        e.stopPropagation();
+        e.preventDefault();
+      },
+      content:e({
+        tag:"img",
+        attributes:{src:"remove_19x19.png"}
+      }),
+    });
+    deleteButton.item = {
+      url: item.url,
+      elem: elem,
+    };
+    elem.appendChild(deleteButton);
     stackE.appendChild(elem);
   }
 });
@@ -47,6 +73,7 @@ chrome.storage.local.get("stack", function(data){
 function b(args){
   var button = e({
     tag:"button",
+    class: "button",
     action: function(){
       alert("BBB");
     }
@@ -74,6 +101,7 @@ function l( args ) {
   var label = e({
     tag:'span',
     parent:item,
+    class: "title",
     content:args.title,
   });
 

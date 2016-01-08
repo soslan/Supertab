@@ -16,7 +16,7 @@
 	white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
-    display: block;
+    display: flex;
     color:#333;
 	text-decoration: none;
 }
@@ -30,6 +30,31 @@
 
 }
 
+.item .button{
+	height: 16px;
+	min-width: 16px;
+	padding: 0;
+}
+
+.item .button img{
+	height: 16px;
+	width: 16px;
+}
+
+.item .button.hidden{
+	display: none;
+}
+
+.item:hover .button.hidden{
+	display: inline-block;
+}
+
+.item .title{
+	flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 .item:hover{
 	background: #eee;
 	color:#333;
@@ -39,4 +64,9 @@
 .supertab-icon{
 	margin-right: 5px;
 
+}
+
+.button{
+	border:none;
+	cursor: pointer;
 }
