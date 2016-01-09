@@ -1,3 +1,96 @@
+function Model(args){
+  args = args || {};
+  this.valueCore;
+  this.changeListeners = [];
+  this.filters = [];
+  this.setValue(args.value);
+}
+
+Model.prototype.setValue = function(value){
+  //this.valueCore = value;
+  var newValue=value, oldValue=this.valueCore, tempValue;
+  for (var i in this.filters){
+    try{
+      tempValue = this.filters[i](newValue);
+    }
+    catch(error){
+      return;
+    }
+    if(tempValue !== undefined){
+      newValue = tempValue;
+    }
+  }
+  if(this.valueCore === newValue){
+    return newValue;
+  }
+  this.valueCore = newValue;
+  for(var i in this.changeListeners){
+    this.changeListeners[i]({
+      after: newValue,
+      before: oldValue,
+    });
+  }
+  return newValue;
+}
+
+Model.prototype.onChange = function(handler){
+  if(typeof handler === "function"){
+    this.changeListeners.push(handler);
+  }
+}
+
+Model.prototype.filter = function(filter){
+  if(typeof filter === "function"){
+    this.filters.push(filter);
+  }
+}
+
+Model.prototype.upstreamChromeExtensionStorage = function(key){
+  var self = this;
+  chrome.storage.onChanged.addListener(function(changes, area){
+    if(typeof changes[key] === "object"){
+      console.log("Storage changed... ", changes);
+      self.value = changes[key]["newValue"];
+    }
+  });
+  self.onChange(function(changes){
+    console.log("Model changed... ", changes);
+    var args = {};
+    args[key] = changes.after;
+    chrome.storage.local.set(args);
+  });
+  chrome.storage.local.get(key, function(data){
+    console.log("Initializing... ", data);
+    self.value = data[key];
+  });
+}
+
+Model.prototype.switchClassName = function(elem, ifTrue, ifFalse){
+  this.onChange(function(delta){
+    if(delta.after){
+      elem.classList.add(ifTrue);
+      elem.classList.remove(ifFalse);
+    }
+    else{
+      elem.classList.add(ifFalse);
+      elem.classList.remove(ifTrue);
+    }
+  });
+}
+
+Model.prototype.getValue = function(){
+  return this.valueCore;
+}
+
+Object.defineProperty(Model.prototype, "value", {
+  get: function(){
+    return this.getValue();
+  },
+  set: function(value){
+    return this.setValue(value);
+  }
+});
+
 chrome.topSites.get(function(data){
   var top = document.getElementById("top");
   for (var i in data){
@@ -33,7 +126,7 @@ chrome.history.search({
 
 chrome.storage.local.get("stack", function(data){
   var stack = data.stack;
-  var stackE = document.getElementById("stack");
+  var stackE = document.getElementById("toread");
   for (var i in stack){
     var item=stack[i];
     var elem = l({
@@ -48,7 +141,7 @@ chrome.storage.local.get("stack", function(data){
       action: function(e){
         var url = e.currentTarget.item.url;
         var element = e.currentTarget.item.elem;
-        document.getElementById("stack").removeChild(element);
+        document.getElementById("toread").removeChild(element);
         chrome.storage.local.get("stack", function(data){
           delete data["stack"][url];
           chrome.storage.local.set(data);
@@ -75,12 +168,25 @@ var sectionControl = document.getElementById("section-control");
 for (var i=0; i< sections.length; i++){
   console.log(sections[i]);
   var section = sections[i];
+  var model = new Model();
+  model.filter(function(val){
+    return Boolean(val);
+  });
+  model.upstreamChromeExtensionStorage(section.id);
+  
   var title = section.querySelector(".title").innerHTML;
   var elem = e({
     tag: "div",
     class: "section-control-button",
     content: title,
+    action: function(e){
+      var model = e.currentTarget.model;
+      model.value = !model.value;
+    },
   });
+  elem.model = model;
+  model.switchClassName(elem, "active");
+  model.switchClassName(section, "active");
   sectionControl.appendChild(elem);
 }
 
