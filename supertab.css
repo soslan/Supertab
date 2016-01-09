@@ -10,11 +10,19 @@ html{
 .section{
 	flex:1;
 	padding: 0 10px;
-	display: none;
+	//display: none;
+	flex-basis:0;
+	flex-grow:0;
+	-webkit-transition: flex-grow 0.1s;
+	padding:0;
+	overflow:hidden;
+	max-width:33%;
 }
 
 .section.active{
 	display: block;
+	flex-grow:1;
+	padding: 0 10px;
 }
 
 .item{
