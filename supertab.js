@@ -227,6 +227,7 @@ function l( args ) {
     tag:"a",
     attributes:{
       href:args.url,
+      title: args.title + "\n" + args.url,
     },
     class:"item"
   });
@@ -244,6 +245,12 @@ function l( args ) {
     class: "title",
     content:args.title,
   });
+
+  label.appendChild(e({
+    tag: 'span',
+    class: 'meta',
+    content: " - " + args.url,
+  }));
 
   return item;
 }

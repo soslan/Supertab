@@ -73,6 +73,10 @@ html{
     text-overflow: ellipsis;
 }
 
+.item .meta{
+	color:#aaa;
+}
+
 .item:hover{
 	background: #eee;
 	color:#333;
