@@ -91,6 +91,7 @@ html{
 
 #section-control{
 	text-align: center;
+	-webkit-user-select:none;
 }
 
 .section-control-button{
@@ -103,6 +104,7 @@ html{
     padding-bottom: 5px;
     vertical-align: 2px;
     padding-top: 3px;
+    background: whitesmoke;
 }
 
 .section-control-button.active{
@@ -117,5 +119,10 @@ html{
 
 .section-control-button:last-child{
 	border-right-width: 1px;
+	border-radius: 0 5px 5px 0;
+}
+
+.section-control-button:first-child{
+	border-radius: 5px 0 0 5px;
 }
 
