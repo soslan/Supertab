@@ -128,8 +128,15 @@ function buildToReadList(data){
   var stack = data.stack;
   var stackE = document.querySelector("#toread .list");
   stackE.innerHTML = "";
+  var list = [];
   for (var i in stack){
-    var item=stack[i];
+    list.push(stack[i]);
+  }
+  list.sort(function(a, b){
+    return b.added - a.added;
+  });
+  for (var i in list){
+    var item=list[i];
     var elem = l({
       url:item.url,
       title:item.title,
