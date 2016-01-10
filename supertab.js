@@ -92,7 +92,7 @@ Object.defineProperty(Model.prototype, "value", {
 });
 
 chrome.topSites.get(function(data){
-  var top = document.getElementById("top");
+  var top = document.querySelector("#top .list");
   for (var i in data){
     var s = data[i];
     var item = l({
@@ -110,7 +110,7 @@ chrome.history.search({
   text:'',
   maxResults:20,
 }, function(items){
-  var historyE = document.getElementById("history");
+  var historyE = document.querySelector("#history .list");
   for (var i in items){
     var item=items[i];
     if(item.title==""){
@@ -124,9 +124,10 @@ chrome.history.search({
   }
 });
 
-chrome.storage.local.get("stack", function(data){
+function buildToReadList(data){
   var stack = data.stack;
-  var stackE = document.getElementById("toread");
+  var stackE = document.querySelector("#toread .list");
+  stackE.innerHTML = "";
   for (var i in stack){
     var item=stack[i];
     var elem = l({
@@ -141,7 +142,7 @@ chrome.storage.local.get("stack", function(data){
       action: function(e){
         var url = e.currentTarget.item.url;
         var element = e.currentTarget.item.elem;
-        document.getElementById("toread").removeChild(element);
+        document.querySelector("#toread .list").removeChild(element);
         chrome.storage.local.get("stack", function(data){
           delete data["stack"][url];
           chrome.storage.local.set(data);
@@ -160,7 +161,19 @@ chrome.storage.local.get("stack", function(data){
     };
     elem.appendChild(deleteButton);
     stackE.appendChild(elem);
+  }}
+
+chrome.storage.onChanged.addListener(function(changes, area){
+  if(typeof changes["stack"] === "object"){
+    //console.log(changes);
+    buildToReadList({
+      "stack": changes["stack"]["newValue"]
+    });
   }
+});
+
+chrome.storage.local.get("stack", function(data){
+  buildToReadList(data);
 });
 
 var sections = document.querySelectorAll("#main > .section");

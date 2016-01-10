@@ -22,6 +22,12 @@ chrome.tabs.onUpdated.addListener(function(tabId, changes, tab){
   }
 });
 
+chrome.tabs.onActivated.addListener(function(info){
+  chrome.tabs.get(info.tabId, function(tab){
+    refreshIcon(tab);
+  })
+});
+
 chrome.storage.sync.get("bookmarks_root", function(data){
   if(data["bookmarks_root"] === undefined){
     chrome.bookmarks.create({
@@ -66,6 +72,22 @@ chrome.browserAction.onClicked.addListener(function(tab){
       refreshIcon(tab);
     });
   });
+});
+
+chrome.storage.onChanged.addListener(function(changes, area){
+  if(typeof changes["stack"] === "object"){
+    chrome.tabs.query({active:true}, function(tabs){
+      console.log("CURRENT TAB IS ", tabs);
+      refreshIcon(tabs[0]);
+    });
+    chrome.tabs.query({}, function(results){
+      for(var i in results){
+        var tab = results[i];
+        refreshIcon(tab);
+        //chrome.browserAction.show(tab.id);
+      }
+    });
+  }
 });
 
 function refreshIcon(tab){
