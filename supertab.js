@@ -136,7 +136,7 @@ chrome.storage.local.get("stack", function(data){
     elem.item = item;
     //var deleteButton = b();
     var deleteButton = e({
-      tag:"button",
+      tag:"div",
       class: "hidden button",
       action: function(e){
         var url = e.currentTarget.item.url;

@@ -15,8 +15,8 @@
 		],
 		"browser_action": {
 			"default_icon": {
-				"19": "push_19x19.png",
-				"38": "push_38x38.png"
+				"19": "radio_disabled_19x19.png",
+				"38": "radio_disabled_38x38.png"
 			},
 			"default_title": "Push to SuperStack"
 		},

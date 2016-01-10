@@ -15,7 +15,7 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.91 r13725"
-   sodipodi:docname="remove.svg"
+   sodipodi:docname="radio_disabled.svg"
    inkscape:export-filename="/home/soslan/projects/supertab/38.png"
    inkscape:export-xdpi="9.6519995"
    inkscape:export-ydpi="9.6519995">
@@ -29,8 +29,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.4142136"
-     inkscape:cx="38.370467"
-     inkscape:cy="62.669858"
+     inkscape:cx="-86.080323"
+     inkscape:cy="61.255644"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="true"
@@ -65,9 +65,9 @@
      id="layer1"
      transform="translate(2.8571429,-963.79083)">
     <path
-       style="fill:#4d4d4d;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 7.1428571,983.79083 9.9999999,-10 30,29.99997 30,-29.99997 10,10 -30,29.99997 30,30 -10,10 -30,-30 -30,30 -9.9999999,-10 29.9999999,-30 z"
-       id="path4806"
-       inkscape:connector-curvature="0" />
+       style="fill:#4d4d4d;stroke:none;stroke-width:10;stroke-miterlimit:4;stroke-dasharray:none"
+       d="M 50 10 A 40 40 0 0 0 10 50 A 40 40 0 0 0 50 90 A 40 40 0 0 0 90 50 A 40 40 0 0 0 50 10 z M 50 20 A 30 30 0 0 1 80 50 A 30 30 0 0 1 50 80 A 30 30 0 0 1 20 50 A 30 30 0 0 1 50 20 z "
+       transform="translate(-2.8571429,963.79083)"
+       id="path4137" />
   </g>
 </svg>

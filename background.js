@@ -76,8 +76,8 @@ function refreshIcon(tab){
       chrome.browserAction.setIcon({
         "tabId":tab.id,
         "path": {
-          "19": "push_19x19.png",
-          "38": "push_38x38.png"
+          "19": "radio_disabled_19x19.png",
+          "38": "radio_disabled_38x38.png"
         }
       });
     }
@@ -85,8 +85,8 @@ function refreshIcon(tab){
       chrome.browserAction.setIcon({
         "tabId":tab.id,
         "path": {
-          "19": "remove_19x19.png",
-          "38": "remove_38x38.png"
+          "19": "radio_enabled_19x19.png",
+          "38": "radio_enabled_38x38.png"
         }
       });
     }
