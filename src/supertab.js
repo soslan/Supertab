@@ -114,11 +114,11 @@ chrome.history.search({
   for (var i in items){
     var item=items[i];
     if(item.title==""){
-      continue;
+      //continue;
     }
     var elem = l({
       url:item.url,
-      title:item.title,
+      title:item.title || item.url,
     });
     historyE.appendChild(elem);
   }
