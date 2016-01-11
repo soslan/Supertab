@@ -106,6 +106,27 @@ chrome.topSites.get(function(data){
   }
 });
 
+chrome.tabs.query({}, function(tabs){
+  var section = document.querySelector("#tabs .list");
+  for (var i in tabs){
+    var tab = tabs[i];
+    var elem = l({
+      url: tab.url,
+      title: tab.title,
+      action: function(e){
+        chrome.tabs.update(e.currentTarget.tabId, {
+          active: true,
+          highlighted: true,
+        }, function(){});
+        e.stopPropagation();
+        e.preventDefault();
+      }
+    });
+    elem.tabId = tab.id;
+    section.appendChild(elem);
+  }
+});
+
 chrome.history.search({
   text:'',
   maxResults:20,
@@ -229,6 +250,7 @@ function l( args ) {
       href:args.url,
       title: args.title + "\n" + args.url,
     },
+    action: args.action,
     class:"item"
   });
 
