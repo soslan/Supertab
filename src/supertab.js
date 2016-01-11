@@ -159,7 +159,7 @@ function buildToReadList(data){
       },
       content:e({
         tag:"img",
-        attributes:{src:"remove_19x19.png"}
+        attributes:{src:"img/remove_19x19.png"}
       }),
     });
     deleteButton.item = {

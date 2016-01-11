@@ -98,8 +98,8 @@ function refreshIcon(tab){
       chrome.browserAction.setIcon({
         "tabId":tab.id,
         "path": {
-          "19": "radio_disabled_19x19.png",
-          "38": "radio_disabled_38x38.png"
+          "19": "img/radio_disabled_19x19.png",
+          "38": "img/radio_disabled_38x38.png"
         }
       });
     }
@@ -107,8 +107,8 @@ function refreshIcon(tab){
       chrome.browserAction.setIcon({
         "tabId":tab.id,
         "path": {
-          "19": "radio_enabled_19x19.png",
-          "38": "radio_enabled_38x38.png"
+          "19": "img/radio_enabled_19x19.png",
+          "38": "img/radio_enabled_38x38.png"
         }
       });
     }
