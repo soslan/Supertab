@@ -8,8 +8,8 @@
    version="1.1"
    id="svg2"
    viewBox="0 0 100 100"
-   height="100"
-   width="100">
+   height="28.222221mm"
+   width="28.222221mm">
   <defs
      id="defs4" />
   <metadata
@@ -30,13 +30,7 @@
     <path
        id="path4135"
        transform="translate(-2.8571429,963.79083)"
-       d="M 50,0 A 50,50 0 0 0 0,50 50,50 0 0 0 50,100 50,50 0 0 0 100,50 50,50 0 0 0 50,0 Z m 0,10 A 40,40 0 0 1 90,50 40,40 0 0 1 50,90 40,40 0 0 1 10,50 40,40 0 0 1 50,10 Z"
-       style="fill:#333333;stroke:none;stroke-width:10;stroke-miterlimit:4;stroke-dasharray:none" />
-    <circle
-       r="30"
-       cy="1013.7908"
-       cx="47.142857"
-       id="path4142"
+       d="M 50 0 A 50 50 0 0 0 0 50 A 50 50 0 0 0 50 100 A 50 50 0 0 0 100 50 A 50 50 0 0 0 50 0 z M 50 10 A 40 40 0 0 1 90 50 A 40 40 0 0 1 50 90 A 40 40 0 0 1 10 50 A 40 40 0 0 1 50 10 z "
        style="fill:#333333;stroke:none;stroke-width:10;stroke-miterlimit:4;stroke-dasharray:none" />
   </g>
 </svg>
