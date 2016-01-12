@@ -7,9 +7,9 @@
    xmlns="http://www.w3.org/2000/svg"
    version="1.1"
    id="svg2"
-   viewBox="0 0 100 100"
-   height="28.222221mm"
-   width="28.222221mm">
+   viewBox="0 0 99.999997 99.999997"
+   height="100"
+   width="100">
   <defs
      id="defs4" />
   <metadata
@@ -28,9 +28,9 @@
      transform="translate(2.8571429,-963.79083)"
      id="layer1">
     <path
-       id="path4135"
+       id="path4828"
        transform="translate(-2.8571429,963.79083)"
-       d="M 50 0 A 50 50 0 0 0 0 50 A 50 50 0 0 0 50 100 A 50 50 0 0 0 100 50 A 50 50 0 0 0 50 0 z M 50 10 A 40 40 0 0 1 90 50 A 40 40 0 0 1 50 90 A 40 40 0 0 1 10 50 A 40 40 0 0 1 50 10 z "
+       d="M 50 10 A 40 40 0 0 0 10 50 A 40 40 0 0 0 50 90 A 40 40 0 0 0 90 50 A 40 40 0 0 0 50 10 z M 50 20 A 30 30 0 0 1 80 50 A 30 30 0 0 1 50 80 A 30 30 0 0 1 20 50 A 30 30 0 0 1 50 20 z "
        style="fill:#333333;stroke:none;stroke-width:10;stroke-miterlimit:4;stroke-dasharray:none" />
   </g>
 </svg>

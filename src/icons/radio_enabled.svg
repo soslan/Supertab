@@ -1,53 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
-
 <svg
    xmlns:dc="http://purl.org/dc/elements/1.1/"
    xmlns:cc="http://creativecommons.org/ns#"
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="100"
-   height="100"
-   viewBox="0 0 99.999997 99.999997"
-   id="svg2"
    version="1.1"
-   inkscape:version="0.91 r13725"
-   sodipodi:docname="radio_enabled.svg"
-   inkscape:export-filename="/home/soslan/projects/supertab/38.png"
-   inkscape:export-xdpi="9.6519995"
-   inkscape:export-ydpi="9.6519995">
+   id="svg2"
+   viewBox="0 0 99.999997 99.999997"
+   height="100"
+   width="100">
   <defs
      id="defs4" />
-  <sodipodi:namedview
-     id="base"
-     pagecolor="#ffffff"
-     bordercolor="#666666"
-     borderopacity="1.0"
-     inkscape:pageopacity="0.0"
-     inkscape:pageshadow="2"
-     inkscape:zoom="1.4142136"
-     inkscape:cx="-35.168636"
-     inkscape:cy="28.728732"
-     inkscape:document-units="px"
-     inkscape:current-layer="layer1"
-     showgrid="true"
-     inkscape:window-width="1366"
-     inkscape:window-height="704"
-     inkscape:window-x="0"
-     inkscape:window-y="27"
-     inkscape:window-maximized="1"
-     fit-margin-top="0"
-     fit-margin-left="0"
-     fit-margin-right="0"
-     fit-margin-bottom="0"
-     units="px">
-    <inkscape:grid
-       type="xygrid"
-       id="grid4804" />
-  </sodipodi:namedview>
   <metadata
      id="metadata7">
     <rdf:RDF>
@@ -56,26 +20,23 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
   <g
-     inkscape:label="Layer 1"
-     inkscape:groupmode="layer"
-     id="layer1"
-     transform="translate(2.8571429,-963.79083)">
+     transform="translate(2.8571429,-963.79083)"
+     id="layer1">
     <path
-       style="fill:#333333;stroke:none;stroke-width:10;stroke-miterlimit:4;stroke-dasharray:none"
-       d="M 50,0 A 50,50 0 0 0 0,50 50,50 0 0 0 50,100 50,50 0 0 0 100,50 50,50 0 0 0 50,0 Z m 0,10 A 40,40 0 0 1 90,50 40,40 0 0 1 50,90 40,40 0 0 1 10,50 40,40 0 0 1 50,10 Z"
+       id="path4828"
        transform="translate(-2.8571429,963.79083)"
-       id="path4135"
-       inkscape:connector-curvature="0" />
+       d="M 50 10 A 40 40 0 0 0 10 50 A 40 40 0 0 0 50 90 A 40 40 0 0 0 90 50 A 40 40 0 0 0 50 10 z M 50 20 A 30 30 0 0 1 80 50 A 30 30 0 0 1 50 80 A 30 30 0 0 1 20 50 A 30 30 0 0 1 50 20 z "
+       style="fill:#333333;stroke:none;stroke-width:10;stroke-miterlimit:4;stroke-dasharray:none" />
     <circle
-       style="fill:#00ffff;stroke:none;stroke-width:10;stroke-miterlimit:4;stroke-dasharray:none"
-       id="path4142"
-       cx="47.142857"
+       r="20"
        cy="1013.7908"
-       r="30" />
+       cx="47.142857"
+       id="path4833"
+       style="fill:#333333;stroke:none;stroke-width:10;stroke-miterlimit:4;stroke-dasharray:none" />
   </g>
 </svg>

@@ -20,7 +20,7 @@ build_icons remove
 build_icons radio_enabled
 build_icons radio_disabled
 
-convert -resize 19x19 -background none src/icons/icon.svg $DIST_IMG/icon_16x16.png
-convert -resize 38x38 -background none src/icons/icon.svg $DIST_IMG/icon_32x32.png
-convert -resize 19x19 -background none src/icons/icon.svg $DIST_IMG/icon_48x48.png
-convert -resize 38x38 -background none src/icons/icon.svg $DIST_IMG/icon_128x128.png
+convert -resize 16x16 -background none src/icons/icon.svg $DIST_IMG/icon_16x16.png
+convert -resize 32x32 -background none src/icons/icon.svg $DIST_IMG/icon_32x32.png
+convert -resize 48x48 -background none src/icons/icon.svg $DIST_IMG/icon_48x48.png
+convert -resize 128x128 -background none src/icons/icon.svg $DIST_IMG/icon_128x128.png

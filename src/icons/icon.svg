@@ -1,41 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
-
 <svg
    xmlns:dc="http://purl.org/dc/elements/1.1/"
    xmlns:cc="http://creativecommons.org/ns#"
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="100mm"
-   height="100mm"
-   viewBox="0 0 354.33071 354.33071"
-   id="svg2"
    version="1.1"
-   inkscape:version="0.91 r13725"
-   sodipodi:docname="icon.svg">
+   id="svg2"
+   viewBox="0 0 99.999997 99.999997"
+   height="100"
+   width="100">
   <defs
      id="defs4" />
-  <sodipodi:namedview
-     id="base"
-     pagecolor="#ffffff"
-     bordercolor="#666666"
-     borderopacity="1.0"
-     inkscape:pageopacity="0.0"
-     inkscape:pageshadow="2"
-     inkscape:zoom="0.35"
-     inkscape:cx="-122.14286"
-     inkscape:cy="-57.142857"
-     inkscape:document-units="px"
-     inkscape:current-layer="layer1"
-     showgrid="false"
-     inkscape:window-width="1366"
-     inkscape:window-height="704"
-     inkscape:window-x="0"
-     inkscape:window-y="27"
-     inkscape:window-maximized="1" />
   <metadata
      id="metadata7">
     <rdf:RDF>
@@ -49,34 +25,28 @@
     </rdf:RDF>
   </metadata>
   <g
-     inkscape:label="Layer 1"
-     inkscape:groupmode="layer"
-     id="layer1"
-     transform="translate(0,-698.0315)">
-    <rect
-       style="fill:#0000ff;stroke:#ff0000;stroke-width:10;stroke-miterlimit:4;stroke-dasharray:none"
-       id="rect4142"
-       width="362.85715"
-       height="368.57144"
-       x="-2.8571429"
-       y="695.21936" />
+     transform="translate(0,-952.36223)"
+     id="layer1">
     <path
-       style="fill:#ffff00;fill-rule:evenodd;stroke:#ff0000;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m 362.85715,966.64793 -34.28572,-2.85714 -25.71428,-197.14286 -228.571435,-2.85714 -31.428572,194.28572 -45.7142859,5.71428 0.039129,95.10891 369.7662839,1.3142 z"
-       id="path3340"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ccccccccc" />
+       id="path4765"
+       transform="translate(0,952.36223)"
+       d="M 50 10 A 40 40 0 0 0 10 50 A 40 40 0 0 0 50 90 A 40 40 0 0 0 90 50 A 40 40 0 0 0 50 10 z M 50 20 A 30 30 0 0 1 80 50 A 30 30 0 0 1 50 80 A 30 30 0 0 1 20 50 A 30 30 0 0 1 50 20 z "
+       style="fill:#0000ff;stroke:none;stroke-width:10;stroke-miterlimit:4;stroke-dasharray:none" />
+    <circle
+       r="30"
+       cy="1002.3622"
+       cx="50"
+       id="path4770"
+       style="fill:#ffff00;stroke:none;stroke-width:10;stroke-miterlimit:4;stroke-dasharray:none" />
     <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:260.44421387px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ff0000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;"
-       x="58.166672"
-       y="1218.6349"
-       id="text3336"
-       sodipodi:linespacing="125%"
-       transform="scale(1.2865588,0.77726723)"><tspan
-         sodipodi:role="line"
-         id="tspan3338"
-         x="58.166672"
-         y="1218.6349">S</tspan></text>
+       id="text4772"
+       y="1025.1204"
+       x="28.249306"
+       style="font-style:normal;font-weight:normal;font-size:62.51988983px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#d40000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:serif;-inkscape-font-specification:serif;fill:#d40000;"
+         y="1025.1204"
+         x="28.249306"
+         id="tspan4774">S</tspan></text>
   </g>
 </svg>
