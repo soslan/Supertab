@@ -15,7 +15,6 @@ convert -resize 19x19 -background none src/icons/$1.svg $DIST_IMG/$1_19x19.png
 convert -resize 38x38 -background none src/icons/$1.svg $DIST_IMG/$1_38x38.png
 }
 mkdir -p src/icons
-build_icons push
 build_icons remove
 build_icons radio_enabled
 build_icons radio_disabled
