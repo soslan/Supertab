@@ -106,26 +106,35 @@ chrome.topSites.get(function(data){
   }
 });
 
-chrome.tabs.query({}, function(tabs){
-  var section = document.querySelector("#tabs .list");
-  for (var i in tabs){
-    var tab = tabs[i];
-    var elem = l({
-      url: tab.url,
-      title: tab.title,
-      action: function(e){
-        chrome.tabs.update(e.currentTarget.tabId, {
-          active: true,
-          highlighted: true,
-        }, function(){});
-        e.stopPropagation();
-        e.preventDefault();
-      }
-    });
-    elem.tabId = tab.id;
-    section.appendChild(elem);
-  }
-});
+function refreshTabs(){
+  chrome.tabs.query({}, function(tabs){
+    var section = document.querySelector("#tabs .list");
+    section.innerHTML = "";
+    for (var i in tabs){
+      var tab = tabs[i];
+      var elem = l({
+        url: tab.url,
+        title: tab.title,
+        action: function(e){
+          chrome.tabs.update(e.currentTarget.tabId, {
+            active: true,
+            highlighted: true,
+          }, function(){});
+          e.stopPropagation();
+          e.preventDefault();
+        }
+      });
+      elem.tabId = tab.id;
+      section.appendChild(elem);
+    }
+  });
+}
+
+refreshTabs();
+
+chrome.tabs.onRemoved.addListener(refreshTabs);
+chrome.tabs.onCreated.addListener(refreshTabs);
+chrome.tabs.onUpdated.addListener(refreshTabs);
 
 chrome.history.search({
   text:'',
