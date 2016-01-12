@@ -1,0 +1,25 @@
+Supertab is a Chrome extension replacing the default New Tab with more
+comprehensive one. Supertab can display most visited websites, history,
+open tabs (useful when keeping a lot of them), and a simple
+read later list.
+
+Building
+--------
+
+Building results in dist/ folder which can be loaded as unpacked folder or
+packed as .crx file at <http://chrome://extensions>.
+
+Building requires only convert from ImageMagic suite for converting SVG icons
+to PNG. To build unpacked folder, run
+    
+    $ ./build.sh
+
+Building for development requires inotify-tools for live rendering of
+modified SVG icons. To build for development, run
+
+    $ ./build_devel.sh
+
+License
+-------
+
+See LICENSE.
