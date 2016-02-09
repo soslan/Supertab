@@ -57,9 +57,9 @@ Model.prototype.upstreamChromeExtensionStorage = function(key){
     console.log("Model changed... ", changes);
     var args = {};
     args[key] = changes.after;
-    chrome.storage.local.set(args);
+    chrome.storage.sync.set(args);
   });
-  chrome.storage.local.get(key, function(data){
+  chrome.storage.sync.get(key, function(data){
     console.log("Initializing... ", data);
     self.value = data[key];
   });
@@ -180,9 +180,9 @@ function buildToReadList(data){
         var url = e.currentTarget.item.url;
         var element = e.currentTarget.item.elem;
         document.querySelector("#toread .list").removeChild(element);
-        chrome.storage.local.get("stack", function(data){
+        chrome.storage.sync.get("stack", function(data){
           delete data["stack"][url];
-          chrome.storage.local.set(data);
+          chrome.storage.sync.set(data);
         });
         e.stopPropagation();
         e.preventDefault();
@@ -209,7 +209,7 @@ chrome.storage.onChanged.addListener(function(changes, area){
   }
 });
 
-chrome.storage.local.get("stack", function(data){
+chrome.storage.sync.get("stack", function(data){
   buildToReadList(data);
 });
 

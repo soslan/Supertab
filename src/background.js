@@ -29,16 +29,16 @@ chrome.tabs.onActivated.addListener(function(info){
 });
 
 //clearStack();
-chrome.storage.local.get("stack", function(data){
+chrome.storage.sync.get("stack", function(data){
   if(data["stack"] === undefined){
-    chrome.storage.local.set({
+    chrome.storage.sync.set({
       "stack": {}
     });
   }
 });
 
 chrome.browserAction.onClicked.addListener(function(tab){
-  chrome.storage.local.get("stack", function(data){
+  chrome.storage.sync.get("stack", function(data){
     console.log("GOT STACK", data);
     if(data["stack"][tab.url] === undefined){
       data["stack"][tab.url] = {
@@ -52,7 +52,7 @@ chrome.browserAction.onClicked.addListener(function(tab){
       console.log(tab.url+" is in the stack");
       delete data["stack"][tab.url];
     }
-    chrome.storage.local.set({
+    chrome.storage.sync.set({
       "stack":data["stack"]
     },function(){
       refreshIcon(tab);
@@ -103,14 +103,14 @@ function refreshIcon(tab){
 }
 
 function getStackItem(url, callback){
-  chrome.storage.local.get("stack", function(data){
+  chrome.storage.sync.get("stack", function(data){
     console.log("GOT ITEM", data);
     callback(data["stack"][url]);
   });
 }
 
 function clearStack(){
-  chrome.storage.local.remove("stack");
+  chrome.storage.sync.remove("stack");
 }
 
 //clearStack();
