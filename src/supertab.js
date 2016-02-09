@@ -7,7 +7,6 @@ function Model(args){
 }
 
 Model.prototype.setValue = function(value){
-  //this.valueCore = value;
   var newValue=value, oldValue=this.valueCore, tempValue;
   for (var i in this.filters){
     try{
@@ -49,18 +48,15 @@ Model.prototype.upstreamChromeExtensionStorage = function(key){
   var self = this;
   chrome.storage.onChanged.addListener(function(changes, area){
     if(typeof changes[key] === "object"){
-      console.log("Storage changed... ", changes);
       self.value = changes[key]["newValue"];
     }
   });
   self.onChange(function(changes){
-    console.log("Model changed... ", changes);
     var args = {};
     args[key] = changes.after;
     chrome.storage.sync.set(args);
   });
   chrome.storage.sync.get(key, function(data){
-    console.log("Initializing... ", data);
     self.value = data[key];
   });
 }
@@ -202,7 +198,6 @@ function buildToReadList(data){
 
 chrome.storage.onChanged.addListener(function(changes, area){
   if(typeof changes["stack"] === "object"){
-    //console.log(changes);
     buildToReadList({
       "stack": changes["stack"]["newValue"]
     });
@@ -216,7 +211,6 @@ chrome.storage.sync.get("stack", function(data){
 var sections = document.querySelectorAll("#main > .section");
 var sectionControl = document.getElementById("section-control");
 for (var i=0; i< sections.length; i++){
-  console.log(sections[i]);
   var section = sections[i];
   var model = new Model();
   model.filter(function(val){
