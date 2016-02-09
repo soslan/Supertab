@@ -1,7 +1,7 @@
 {
     "manifest_version": 2,
     "name": "Supertab",
-    "version": "0.0.1",
+    "version": "0.1.0",
     "description": "A comprehensive New Tab",
     "icons": {
             "16": "img/icon_16x16.png",
@@ -24,9 +24,10 @@
             "19": "img/radio_disabled_19x19.png",
             "38": "img/radio_disabled_38x38.png"
         },
-        "default_title": "Push to SuperStack"
+        "default_title": "Read later"
     },
     "background": {
-        "scripts": ["background.js"]
+        "scripts": ["background.js"],
+        "persistent": false
     }
 }
