@@ -14,10 +14,9 @@
     },
     "permissions": [
         "topSites",
-        "chrome://favicon/",
+        "<all_urls>",
         "history",
         "tabs",
-        "bookmarks",
         "storage"
     ],
     "browser_action": {
