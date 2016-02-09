@@ -28,20 +28,6 @@ chrome.tabs.onActivated.addListener(function(info){
   })
 });
 
-chrome.storage.sync.get("bookmarks_root", function(data){
-  if(data["bookmarks_root"] === undefined){
-    chrome.bookmarks.create({
-      "title":"SuperTab"
-    }, function(root){
-      console.log("Created root bookmark folder.");
-      chrome.storage.sync.set({
-        "bookmarks_root": root.id
-      }, function(){
-
-      });
-    });
-  }
-});
 //clearStack();
 chrome.storage.local.get("stack", function(data){
   if(data["stack"] === undefined){
