@@ -104,8 +104,12 @@ function refreshIcon(tab){
 
 function getStackItem(url, callback){
   chrome.storage.sync.get("stack", function(data){
-    console.log("GOT ITEM", data);
-    callback(data["stack"][url]);
+    if ( data['stack'] == null ){
+      callback(undefined);
+    }
+    else{
+      callback(data["stack"][url]);
+    }
   });
 }
 
